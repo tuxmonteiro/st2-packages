@@ -14,5 +14,5 @@ Version: %{version}
 Release: %{release}
 Group: System/Management
 License: Apache
-Url: https://github.com/StackStorm/st2
+Url: https://github.com/tuxmonteiro/st2
 Source0: %{package}

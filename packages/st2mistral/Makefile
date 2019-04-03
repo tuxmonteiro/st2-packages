@@ -8,7 +8,7 @@ PBR_GITURL := git+https://github.com/openstack-dev/pbr@d19459daa8616dd18fde016c2
 
 # We use special additional requirements in our mistral bundle!
 define INJECT_DEPS
-git+https://github.com/StackStorm/st2mistral.git@$(GITREV)#egg=st2mistral
+git+https://github.com/tuxmonteiro/st2mistral.git@$(GITREV)#egg=st2mistral
 $(PBR_GITURL)
 endef
 export INJECT_DEPS
@@ -84,7 +84,7 @@ inject-deps: .stamp-inject-deps
 	sed -i "s/^python-senlinclient.*/python-senlinclient<1.10.0 # Apache-2.0/g" requirements.txt
 
 ifeq (,$(findstring dev,$(MISTRAL_VERSION)))
-	sed -i "s/^python-mistralclient.*/git+https:\/\/github.com\/StackStorm\/python-mistralclient.git@st2-$(MISTRAL_VERSION)\#egg=python-mistralclient/g" requirements.txt
+	sed -i "s/^python-mistralclient.*/git+https:\/\/github.com\/tuxmonteiro\/python-mistralclient.git@st2-$(MISTRAL_VERSION)\#egg=python-mistralclient/g" requirements.txt
 endif
 
 	touch $@
